@@ -21,7 +21,7 @@ class EntitiesController < ApplicationController
 
     respond_to do |format|
       if @entity.save
-        format.html { redirect_to groups_path, notice: "Entity was successfully created." }
+        format.html { redirect_to groups_path, notice: 'Entity was successfully created.' }
         format.json { render :show, status: :created, location: @entity }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -54,13 +54,14 @@ class EntitiesController < ApplicationController
   # end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_entity
-      @entity = Entity.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def entity_params
-      params.require(:entity).permit(:name, :amount, :user_id, :group_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_entity
+    @entity = Entity.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def entity_params
+    params.require(:entity).permit(:name, :amount, :user_id, :group_id)
+  end
 end
