@@ -4,7 +4,7 @@ class EntitiesController < ApplicationController
   # GET /entities or /entities.json
   def index
     @group = Group.includes(:entities).find(params[:group_id])
-    @entities = @group.entities
+    @entities = @group.entities.order(created_at: :desc)
   end
 
   # GET /entities/new
