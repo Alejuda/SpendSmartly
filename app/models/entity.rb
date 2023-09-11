@@ -6,6 +6,6 @@ class Entity < ApplicationRecord
   validates :amount, presence: true, numericality: { greater_than: 0 }
 
   def formatted_date
-    created_at.strftime("%Y/%m/%d")
+    created_at.strftime('%Y/%m/%d')
   end
 end
