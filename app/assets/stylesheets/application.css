@@ -63,6 +63,10 @@ body {
   font-weight: 400;
 }
 
+.nav-text {
+  color: white;
+}
+
 .nav-icon {
   height: 14PX;
 }
