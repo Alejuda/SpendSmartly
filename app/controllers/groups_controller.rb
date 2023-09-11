@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
   # GET /groups/new
   def new
     @group = Group.new
-    @user = current_user
+    @group.user = current_user
   end
 
   # POST /groups or /groups.json

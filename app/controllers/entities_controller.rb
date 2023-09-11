@@ -4,12 +4,13 @@ class EntitiesController < ApplicationController
   # GET /entities or /entities.json
   def index
     @group = Group.includes(:entities).find(params[:group_id])
-    @entities = @group.entities
+    @entities = @group.entities.order(created_at: :desc)
   end
 
   # GET /entities/new
   def new
     @entity = Entity.new
+    @group = Group.find(params[:group_id])
     @entity.user = current_user
     @available_groups = current_user.groups
   end
@@ -21,7 +22,7 @@ class EntitiesController < ApplicationController
 
     respond_to do |format|
       if @entity.save
-        format.html { redirect_to groups_path, notice: 'Entity was successfully created.' }
+        format.html { redirect_to groups_path, notice: 'Transaction was successfully created.' }
         format.json { render :show, status: :created, location: @entity }
       else
         format.html { render :new, status: :unprocessable_entity }
