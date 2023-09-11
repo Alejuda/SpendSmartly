@@ -1,34 +1,35 @@
 <%= form_with(model: entity, url: group_entities_path) do |form| %>
   <% if entity.errors.any? %>
-    <div style="color: red">
+    <div class="error-container" style="color: red">
       <h2><%= pluralize(entity.errors.count, "error") %> prohibited this entity from being saved:</h2>
 
       <ul>
         <% entity.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li>* <%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
+    <div class="divisor"></div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="input-container">
+    <%= form.label :name, style: "display: NONE" %>
+    <%= form.text_field :name, placeholder: "TRANSACTION NAME" %>
   </div>
-
-  <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.text_field :amount %>
+  <div class="divisor"></div>
+  <div class="input-container">
+    <%= form.label :amount, style: "display: NONE" %>
+    <%= form.text_field :amount, placeholder: "TRANSACTION AMOUNT" %>
   </div>
-
-  <div>
-    <%= form.label :group_id, style: "display: block" %>
+  <div class="divisor"></div>
+  <div class="input-container">
+    <%= form.label :group_id, style: "display: NONE" %>
     <%= form.collection_select(:group_id, available_groups, :id, :name, {selected: group.id}, {}) %>
   </div>
 
   <%= form.hidden_field :user_id, value: entity.user.id %>
-
-  <div>
-    <%= form.submit %>
+  <div class="divisor"></div>
+  <div class="input-container">
+    <%= form.submit "SAVE TRANSACTION", class: "save-btn" %>
   </div>
 <% end %>

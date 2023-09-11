@@ -89,8 +89,8 @@ body {
 }
 
 .group-icon {
-  width: 40px;
   height: 40px;
+  width: auto;
   object-fit: cover;
 }
 
@@ -198,17 +198,20 @@ margin: 10px;
 color: rgb(146, 145, 145);
 }
 
-input {
+input,
+select {
   border: none;
   background-color: white;
   padding: 20px 0;
+  width: 100%;
 }
 
 input:focus {
   outline: none;
 }
 
-input::placeholder {
+input::placeholder,
+select {
   color: #b6b4b4;
 }
 

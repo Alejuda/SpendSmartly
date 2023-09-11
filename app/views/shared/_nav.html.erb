@@ -1,7 +1,7 @@
 <header class="nav-container">
   <nav class="nav">
 
-    <% if controller_name == 'groups' && action_name == "new" %>
+    <% if controller_name == 'groups' && action_name != "index" %>
       <%= link_to groups_path, class: "nav-icon-link" do %>
         <%= image_tag 'icons/back.svg', alt: 'Go back', class: "nav-icon"%>
       <% end %>
