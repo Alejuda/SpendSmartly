@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :categories, only: [:index, :show, :new, :create] do
-    resources :transactions, only: [:new, :create]
+  resources :groups, only: [:index, :new, :create] do
+    resources :entities, only: [:index, :new, :create]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root 'categories#index'
+  root 'entities#index'
 end
