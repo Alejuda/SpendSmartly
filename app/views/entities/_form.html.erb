@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :group_id, style: "display: block" %>
-    <%= form.collection_select(:group_id, available_groups, :id, :name, {}, {}) %>
+    <%= form.collection_select(:group_id, available_groups, :id, :name, {selected: group.id}, {}) %>
   </div>
 
   <%= form.hidden_field :user_id, value: entity.user.id %>

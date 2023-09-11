@@ -10,6 +10,7 @@ class EntitiesController < ApplicationController
   # GET /entities/new
   def new
     @entity = Entity.new
+    @group = Group.find(params[:group_id])
     @entity.user = current_user
     @available_groups = current_user.groups
   end

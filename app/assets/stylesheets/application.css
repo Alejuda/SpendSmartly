@@ -14,13 +14,100 @@
  *= require_self
  */
 
- .group-link-container {
+@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+
+* {
+  font-family: 'Proxima-nova', 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F5F6F8;
+}
+
+/* ----------- NAVBAR ------------- */
+
+.nav-container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #3878C2, #2d609b);
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 500px;
+}
+
+.nav-title {
+  color: white;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.nav-icon {
+  height: 14PX;
+}
+
+/* ----------- end ------------- */
+
+/* ----------- GROUPS ------------- */
+
+#groups {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.group-link-container {
   color: black;
   text-decoration: none;
- }
+}
 
- .group-icon {
+.group-icon {
   width: 40px;
   height: 40px;
   object-fit: cover;
- }
+}
+
+.group-container {
+  background-color: #ffffff;
+  border: 2px solid #EBEBEB;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 10px;
+}
+
+.group-total {
+  margin-left: auto;
+  font-size: 20px;
+}
+
+.button-container {
+  width: 100%;
+  padding: 20px;
+  background-color: #60B524;
+}
+
+.create-button {
+  display: block;
+  text-align: center;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+/* ----------- end ------------- */
